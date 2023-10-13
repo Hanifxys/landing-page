@@ -1,0 +1,230 @@
+/* Base Styles & Variables */
+:root {
+    --primary-color: #2a2a2a;
+    --secondary-color: #f1c40f;
+    --neutral-light: #f7f7f7;
+    --neutral-dark: #333;
+    --font-family: 'Helvetica Neue', Arial, sans-serif;
+    --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--neutral-light);
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.page-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: var(--neutral-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.hero {
+    position: relative;
+    padding: 5rem 0;
+    text-align: center;
+    background-color: var(--neutral-dark);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('path_to_pattern_image.png');
+    opacity: 0.2;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    background-color: var(--neutral-dark);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+    box-shadow: var(--box-shadow);
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.container {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--neutral-dark);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    flex: 1;
+    margin: 0 1rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonials {
+    background-color: var(--primary-color);
+    padding: 3rem 0;
+}
+
+.contact-section {
+    padding: 2rem 0;
+    background-color: var(--neutral-light);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 3rem 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--neutral-dark);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    outline: none;
+    background-color: var(--primary-color);
+    color: var(--neutral-light);
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: var(--neutral-light);
+}
+
+.contact-btn {
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+.contact-details {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--neutral-dark);
+    color: var(--neutral-light);
+    box-shadow: var(--box-shadow);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .featured {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        margin: 1rem 0;
+    }
+
+    .testimonial-card {
+        max-width: 80%;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-form, .contact-details {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .navbar a {
+        margin: 0.5rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .testimonial-card, .feature-card {
+        max-width: 95%;
+    }
+}
